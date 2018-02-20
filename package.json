@@ -1,0 +1,19 @@
+{
+  "name": "aretmis2",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.40",
+    "babel-runtime": "^6.26.0",
+    "bcrypt": "^1.0.3",
+    "meteor-node-stubs": "^0.3.2",
+    "react": "^16.2.0",
+    "react-devtools": "^3.0.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "electron": "1.7.10"
+  }
+}
