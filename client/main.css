@@ -23,8 +23,10 @@
   		text-shadow: 0 0 2px black;
   	}
 
-  	#adding_queries {
+  	.activeQuarry {
   		display: block;
+      float:left; 
+      padding: 1em;
   	}
 
 
@@ -35,6 +37,7 @@
   		filter: drop-shadow(2px 2px 4px black);
   		width: 15%;
   	}
+
   	.quarry_container{
   		margin-left: 1em;
   	}

@@ -17,11 +17,11 @@ import DisplayQuarry from './DisplayQuarry.js';
 class App extends Component {
 	constructor(props){
 		super(props);
-		this.state={activeQuarry: null};
+		this.state={activeQuarry: ''};
 	}
 
 	handleQuarryClick(e){
-		console.log(e.target.id);
+		this.setState({activeQuarry: e.target.id});
 	}
 
 	handleSubmit(event){
@@ -45,29 +45,6 @@ class App extends Component {
 			(<Quarry key={t._id} q={t} onClick={this.handleQuarryClick.bind(this)}/>));
 	}
 
-	renderAddQuarry(){
-		if (this.state.addingQuarry){
-			return(
-				<div className="activeQuarry">
-				<AccountsUIWrapper />
-				<div id='add_trackers'>
-				<form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
-				<div className="form-group">
-				<input className="form-control" type="text" ref="name" placeholder="What would you like to call your device?"/>
-				</div>
-				<div className="form-group">
-				<input className="form-control" type="text" ref="ble_num" placeholder="Device serial number"/>
-				</div>
-				<button onClick={this.handleSubmit.bind(this)} className="btn btn-primary">Submit</button>
-				</form>
-				</div>
-				</div>
-				);
-		}
-		
-			return('');
-	}
-
 	render() {
 		return (
 			<div className="trackers container">
@@ -76,14 +53,14 @@ class App extends Component {
 				</header>
 				<div className="quarry_container">
 					<h1>Quarries</h1>
-					<div className="new_quarry" onClick={this.handleQuarryClick.bind(this)}>
-					<h2 id="addquarry">New Quarry</h2>
+					<div className="new_quarry">
+					<h2 id="addquarry" onClick={this.handleQuarryClick.bind(this)}>New Quarry</h2>
 					</div>
 					<div className = "all_quarry">
 						{this.renderQuarries()}	
 					</div>
 					<div className="activeQuarry">
-						<DisplayQuarry  onClick={this.handleQuarryClick.bind(this)}/>
+						<DisplayQuarry formSubmission={this.handleSubmit.bind(this)} active={this.state.activeQuarry}/>
 					</div>
 				</div>		
 			</div>

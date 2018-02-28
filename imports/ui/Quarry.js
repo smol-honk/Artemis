@@ -12,36 +12,30 @@ import { Trackers } from '../api/trackers.js';
 class Quarry extends Component {
 	constructor(props){
 		super(props);
-		this.handleQuarryClick = this.handleQuarryClick.bind(this);
 		this.state = {
 			beacons: null, 
-			activeQuarry:''
 		};
 	}
 	
-	handleQuarryClick(e){
-		console.log(e.target);
-	}
-
 	createBeacon(name, uuid){
-		console.log("createBeacon: " + name+ " " + uuid);
+		// console.log("createBeacon: " + name+ " " + uuid);
 		try {
 			var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(name, uuid);
 			console.log("We ran!");
 
 			this.findQuarry(beaconRegion);   
 
-		}catch(error){
+		} catch(error){
 			console.log(error);
 		}
 	}
 
 	beginQuarry(){
-		console.log("beginQuarry");
+		// console.log("beginQuarry");
 		var trackers = Trackers.find().fetch();
-		console.log(trackers);
+		// console.log(trackers);
 		for (var quar of trackers) {
-			console.log(quar);
+			// console.log(quar);
 			this.createBeacon(quar.name, quar.ble_serial)
 		}
 	}
@@ -149,8 +143,9 @@ class Quarry extends Component {
 
 	render(){
 		return(
-			<div className="quarries" id={this.props.q.name}>
+			<div className="quarries" id={this.props.q.name} onClick={this.props.onClick.bind(this)}>
 			{this.props.q.name}
+			<hr></hr>
 			</div>
 			)
 
