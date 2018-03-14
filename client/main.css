@@ -1,104 +1,110 @@
   @import url("https://use.typekit.net/stm3vgm.css");
 
-  .title {
-  	font-weight: 300;
-  	font-size: 5rem;
-  	font-style: normal;
-  	font-family: capitol, sans-serif;
-  	text-shadow: 3px 4px 10px black;
-  }
+  @media only screen and (min-width: 768px){
+    .title {
+      font-weight: 300;
+      font-size: 5rem;
+      font-style: normal;
+      font-family: capitol, sans-serif;
+      text-shadow: 3px 4px 10px black;
+    }
+
+    .all_quarry::-webkit-scrollbar {
+      width: 0px;  /* remove scrollbar space */
+      background: transparent;  /* optional: just make scrollbar invisible */
+    }
+
+    h1{
+      font-weight: 300;
+      filter: drop-shadow(2px 2px 4px black);  }
+
+      input, button{
+        font-weight: 100;
+        font-size: smaller;
+      }
+      .login-link-text {
+        font-weight: 400;
+        color: white;
+        text-shadow: 0 0 2px black;
+      }
+
+      .activeQuarry {
+        display: block;
+        float:left; 
+        padding: 1em;
+      }
 
 
-  h1{
-  	font-weight: 300;
-  	filter: drop-shadow(2px 2px 4px black);  }
+      .all_quarry {
+        overflow: scroll;
+        display: block;
+        float: left;
+        filter: drop-shadow(2px 2px 4px black);
+        width: 15%;
+      }
 
-  	input, button{
-  		font-weight: 100;
-  		font-size: smaller;
-  	}
-  	.login-link-text {
-  		font-weight: 400;
-  		color: white;
-  		text-shadow: 0 0 2px black;
-  	}
+      .quarry_container{
+        margin-left: 1em;
+      }
 
-  	.activeQuarry {
-  		display: block;
-      float:left; 
-      padding: 1em;
-  	}
+      .quarries {
+        display: block;
+        text-align: center;
+        filter: drop-shadow(0 0 10rem black);
+      }
 
+      #main{
+        filter: drop-shadow(0 0 10rem black);
+        background: inherit;
+        position:absolute;
+        top:50%;
+        left:50%;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+      }
 
-  	.all_quarry {
-  		overflow: scroll;
-  		display: block;
-  		float: left;
-  		filter: drop-shadow(2px 2px 4px black);
-  		width: 15%;
-  	}
+      #main:before{
+        content:" ";
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        filter: blur(15px);
+      }
 
-  	.quarry_container{
-  		margin-left: 1em;
-  	}
+      body {
+        background-image: url("/images/pexels-photo-142497.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: white;
+        font-family: fira-sans, sans-serif;
+        font-weight: 100;
+        font-size: large;
+        font-style: normal;
+        text-shadow: 3px 4px 10px black;
+      }
 
-  	.quarries {
-  		display: block;
-  		padding: 1rem;
-  		text-align: center;
-  		filter: drop-shadow(0 0 10rem black);
-  	}
-
-  	#main{
-  		filter: drop-shadow(0 0 10rem black);
-  		background: inherit;
-  		position:absolute;
-  		top:50%;
-  		left:50%;
-  		padding:10% 1%;
-  		-ms-transform: translateX(-50%) translateY(-50%);
-  		-webkit-transform: translate(-50%,-50%);
-  		transform: translate(-50%,-50%);
-  	}
-
-  	#main:before{
-  		content:" ";
-  		left: 0;
-  		right: 0;
-  		top: 0;
-  		bottom: 0;
-  		filter: blur(15px);
-  	}
-
-  	body {
-  		background-image: url("/images/pexels-photo-142497.jpeg");
-  		background-size: cover;
-  		background-repeat: no-repeat;
-  		color: white;
-  		font-family: fira-sans, sans-serif;
-  		font-weight: 100;
-  		font-size: large;
-  		font-style: normal;
-  		text-shadow: 3px 4px 10px black;
-  	}
-
-  	.bg-overlay:before {
-  		content:" ";
-  		left: 0;
-  		right: 0;
-  		top: 0;
-  		bottom: 0;
-  		filter: blur(15px);
-  	}
+      .bg-overlay:before {
+        content:" ";
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        filter: blur(15px);
+      }
 
 
-  	.bg-overlay {
-  		background: inherit;
-  		filter: blur(15px);
-  		position: absolute;
-  		left: 0;
-  		right: 0;
-  		top: 0;
-  		bottom: 0;
-  		z-index: -1;
-  	}
+      .bg-overlay {
+        background: inherit;
+        filter: blur(15px);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+    }
+    
+    

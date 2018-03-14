@@ -6,14 +6,13 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import Quarry from './Quarry.js';
 import AccountsUIWrapper from './AccountsUIWrapper.js';
-
+import { Trackers } from '../api/trackers.js';
 
 
 export default class DisplayQuarry extends Component{
 	constructor(props){
 		super(props);
 	}
-
 	
 	renderAddQuarry(){
 		if (this.props.active == 'addquarry'){
@@ -23,16 +22,15 @@ export default class DisplayQuarry extends Component{
 				<div id='add_trackers'>
 				<form className="new-task" onSubmit={this.props.formSubmission.bind(this)} >
 				<div className="form-group">
-				<input className="form-control" type="text" ref="name" placeholder="What would you like to call your device?"/>
+				<input id="ble_name" className="form-control" type="text" placeholder="What would you like to call your device?"/>
 				</div>
 				<div className="form-group">
-				<input className="form-control" type="text" ref="ble_num" placeholder="Device serial number"/>
+				<input id="ble_num" className="form-control" type="text"  placeholder="Device serial number"/>
 				</div>
 				<button className="btn btn-primary">Submit</button>
 				</form>
 				</div>
 				</div>
-
 
 
 				);

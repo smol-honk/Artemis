@@ -13,8 +13,6 @@ import DisplayQuarry from '../imports/ui/DisplayQuarry.js';
 Meteor.startup(() => {
 	if (Meteor.isCordova){
 		console.log("CORDOVA!");
-		// Quarry.beginQuarry();
-		// render(<Quarry />, document.getElementById('quarry'));
 	}
 	render(<App />, document.getElementById('main'));
 });

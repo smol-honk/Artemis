@@ -24,17 +24,6 @@ class App extends Component {
 		this.setState({activeQuarry: e.target.id});
 	}
 
-	handleSubmit(event){
-		event.preventDefault();
-		const name = ReactDOM.findDOMNode(this.refs.name).value.trim();
-		const ble_num = ReactDOM.findDOMNode(this.refs.ble_num).value.trim();
-		
-		Trackers.insert({name, createdAt: new Date(), ble_serial: ble_num, userID: Meteor.userId()});
-
-		ReactDOM.findDOMNode(this.refs.name).value = '';
-		ReactDOM.findDOMNode(this.refs.ble_num).value = '';
-	}
-
 	renderTrackers() {
 		return this.props.trackers.map((t) =>
 			(<Tracker key={t._id} tracker={t} />));
@@ -43,6 +32,19 @@ class App extends Component {
 	renderQuarries(){
 		return this.props.trackers.map((t) =>
 			(<Quarry key={t._id} q={t} onClick={this.handleQuarryClick.bind(this)}/>));
+	}
+
+	handleSubmit(event){
+		console.dir(event.target);
+		var inputName = event.target.elements[0];
+		var inputNum = event.target.elements[1];
+		event.preventDefault();
+		const name = inputName.value.trim();
+		const ble_num = inputNum.value.trim();
+		
+		Trackers.insert({name, createdAt: new Date(), ble_serial: ble_num, userID: Meteor.userId()});
+
+		inputName.value = inputNum.value = '';
 	}
 
 	render() {

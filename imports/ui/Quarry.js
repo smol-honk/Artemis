@@ -42,7 +42,10 @@ class Quarry extends Component {
 
 
 	componentDidMount(){
-		this.beginQuarry();
+		if (Meteor.isCordova){
+			this.beginQuarry();
+
+		}
 	}
 
 	rangingQuarry(beaconRegion){
